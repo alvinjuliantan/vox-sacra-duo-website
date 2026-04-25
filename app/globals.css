@@ -10,19 +10,36 @@
 
 body {
   @apply bg-ivory text-charcoal font-sans antialiased;
+  background-image: radial-gradient(circle at top right, rgba(168, 143, 99, 0.1), transparent 50%);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @apply font-serif tracking-[0.01em];
+  @apply font-serif tracking-[0.01em] text-warmblack;
+}
+
+p {
+  @apply leading-relaxed;
 }
 
 .section-shell {
   @apply mx-auto max-w-6xl px-6 md:px-10;
 }
 
-.editorial-card {
-  @apply rounded-2xl border border-taupe/40 bg-white/80 shadow-soft backdrop-blur;
+.section-intro {
+  @apply text-xs uppercase tracking-[0.26em] text-bronze/90;
+}
+
+.editorial-rule {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-stone to-transparent;
+}
+
+.editorial-panel {
+  @apply border-y border-stone/70 py-10;
+}
+
+.link-elegant {
+  @apply text-xs uppercase tracking-[0.2em] text-bronze transition hover:text-warmblack;
 }

@@ -6,35 +6,48 @@ type ArtistCardProps = {
 };
 
 export default function ArtistCard({ artist }: ArtistCardProps) {
-  const isWayne = artist.name.toLowerCase().includes("wayne");
-  const imagePosition = isWayne ? "object-[50%_25%]" : "object-[50%_18%]";
+  const isAlvin = artist.name.toLowerCase().includes("alvin");
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-taupe/45 bg-white/85 shadow-elegant">
-      <div className="relative aspect-[5/4] bg-warmstone/30 md:aspect-[16/10]">
-        {isWayne ? (
-          <div className="flex h-full items-center justify-center bg-warmstone/40 text-center text-charcoal">
-            <div>
-              <p className="font-serif text-3xl text-bronze">Portrait forthcoming</p>
-              <p className="mt-2 text-sm">Replace with /images/wayne-piano-portrait.jpg</p>
+    <article className="editorial-panel">
+      <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
+        <div
+          className={`relative border border-stone/60 bg-parchment/35 ${
+            isAlvin
+              ? "min-h-[560px] sm:min-h-[640px] md:min-h-[760px]"
+              : "min-h-[420px] md:min-h-[560px]"
+          }`}
+        >
+          {artist.image ? (
+            <Image
+              src={artist.image}
+              alt={`${artist.name} portrait`}
+              fill
+              className={
+                isAlvin
+                  ? "object-contain object-top p-4 sm:p-6 md:p-8"
+                  : "object-cover object-[50%_16%]"
+              }
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 35vw"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center px-8 text-center">
+              <div>
+                <p className="font-serif text-3xl text-warmblack">Portrait forthcoming</p>
+                <p className="mt-2 text-sm text-charcoal/75">Professional portrait to be added.</p>
+              </div>
             </div>
+          )}
+        </div>
+
+        <div>
+          <h3 className="text-4xl md:text-5xl">{artist.name}</h3>
+          <p className="mt-3 text-xs uppercase tracking-[0.22em] text-bronze">{artist.role}</p>
+          <div className="mt-8 space-y-6 text-base text-charcoal/87 md:text-lg">
+            {artist.bio.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
-        ) : (
-          <Image
-            src={artist.image}
-            alt={`${artist.name} portrait`}
-            fill
-            className={`object-cover ${imagePosition}`}
-          />
-        )}
-      </div>
-      <div className="p-8 md:p-10">
-        <h3 className="text-4xl text-charcoal">{artist.name}</h3>
-        <p className="mt-2 text-xs uppercase tracking-[0.24em] text-olive">{artist.role}</p>
-        <div className="mt-7 space-y-5 text-charcoal/88 leading-relaxed">
-          {artist.bio.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
         </div>
       </div>
     </article>
