@@ -16,23 +16,19 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-taupe/40 bg-ivory/92 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-stone/70 bg-ivory/90 backdrop-blur-xl">
       <nav className="section-shell flex items-center justify-between py-5">
-        <Link href="/" className="font-serif text-xl text-charcoal md:text-2xl">
+        <Link href="/" className="font-serif text-2xl text-warmblack md:text-3xl">
           Vox Sacra Duo
         </Link>
-        <ul className="hidden gap-6 text-sm uppercase tracking-[0.14em] md:flex">
+        <ul className="hidden gap-6 text-xs uppercase tracking-[0.18em] md:flex">
           {links.map(([href, label]) => {
             const active = pathname === href;
             return (
               <li key={href}>
                 <Link
                   href={href}
-                  className={`transition ${
-                    active
-                      ? "text-bronze"
-                      : "text-charcoal/75 hover:text-olive"
-                  }`}
+                  className={active ? "text-bronze" : "text-charcoal/78 transition hover:text-warmblack"}
                 >
                   {label}
                 </Link>

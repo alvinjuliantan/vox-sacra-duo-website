@@ -5,10 +5,12 @@ type PageHeaderProps = {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="border-b border-taupe/40 bg-gradient-to-b from-ivory via-ivory to-warmstone/40 py-24">
+    <section className="py-20 md:py-24">
       <div className="section-shell">
-        <h1 className="text-5xl text-charcoal md:text-6xl">{title}</h1>
-        <p className="mt-5 max-w-3xl text-lg text-charcoal/80 md:text-xl">{subtitle}</p>
+        <p className="section-intro">Vox Sacra Duo</p>
+        <h1 className="mt-4 max-w-4xl text-5xl leading-[1.02] md:text-6xl">{title}</h1>
+        <p className="mt-6 max-w-3xl text-lg text-charcoal/82 md:text-xl">{subtitle}</p>
+        <div className="editorial-rule mt-12" />
       </div>
     </section>
   );
