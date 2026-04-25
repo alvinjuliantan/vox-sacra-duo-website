@@ -7,9 +7,15 @@ export default function GalleryPage() {
     <>
       <PageHeader
         title="Gallery"
-        subtitle="Performance images in sacred, recital, and collaborative settings"
+        subtitle="A curated selection of sacred and recital moments across chapel, concert, and collaborative settings"
       />
-      <section className="section-shell py-16">
+      <section className="section-shell py-14">
+        <p className="max-w-3xl text-lg leading-relaxed text-charcoal/85">
+          These photographs capture the atmosphere of Vox Sacra Duo performances: intimate storytelling,
+          devotional stillness, and expressive collaboration.
+        </p>
+      </section>
+      <section className="section-shell pb-24">
         <GalleryGrid images={galleryImages} />
       </section>
     </>

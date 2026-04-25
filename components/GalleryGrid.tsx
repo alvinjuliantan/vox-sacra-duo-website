@@ -9,15 +9,49 @@ type GalleryGridProps = {
   images: GalleryImage[];
 };
 
+const featured = new Set([
+  "/images/alvin-recital-closeup.jpg",
+  "/images/alvin-sacred-chapel.jpg",
+]);
+
+const imagePositions: Record<string, string> = {
+  "/images/alvin-wayne-duo-hero.jpg": "object-[50%_28%]",
+  "/images/alvin-recital-closeup.jpg": "object-[56%_20%]",
+  "/images/alvin-sacred-chapel.jpg": "object-[52%_22%]",
+  "/images/alvin-ensemble-performance.jpg": "object-[50%_24%]",
+  "/images/alvin-competition-stage.jpg": "object-[50%_20%]",
+  "/images/alvin-orchestra-performance.jpg": "object-[50%_22%]",
+  "/images/alvin-portrait-blue.jpg": "object-[50%_15%]",
+};
+
 export default function GalleryGrid({ images }: GalleryGridProps) {
   return (
-    <section className="columns-1 gap-5 space-y-5 md:columns-2 lg:columns-3">
-      {images.map((image) => (
-        <div key={image.src} className="break-inside-avoid overflow-hidden rounded-md border border-stone/60 bg-white shadow-elegant">
-          {/* Replace each image file in public/images with final edited photographs. */}
-          <Image src={image.src} alt={image.alt} width={800} height={1000} className="h-auto w-full object-cover" />
-        </div>
-      ))}
+    <section className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+      {images.map((image) => {
+        const isFeatured = featured.has(image.src);
+        return (
+          <figure
+            key={image.src}
+            className={`group overflow-hidden rounded-2xl border border-taupe/40 bg-white/85 shadow-soft ${
+              isFeatured ? "md:col-span-2" : ""
+            }`}
+          >
+            <div className={`relative ${isFeatured ? "aspect-[16/9]" : "aspect-[4/5]"}`}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className={`object-cover transition duration-500 group-hover:scale-[1.02] ${
+                  imagePositions[image.src] ?? "object-center"
+                }`}
+              />
+            </div>
+            <figcaption className="px-5 py-4 text-sm uppercase tracking-[0.11em] text-charcoal/75">
+              {image.alt}
+            </figcaption>
+          </figure>
+        );
+      })}
     </section>
   );
 }

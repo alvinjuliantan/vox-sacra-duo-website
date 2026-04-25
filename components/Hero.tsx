@@ -8,29 +8,29 @@ type HeroProps = {
 
 export default function Hero({ title, subtitle }: HeroProps) {
   return (
-    <section className="relative min-h-[78vh] overflow-hidden">
-      {/* Replace /images/alvin-wayne-duo-hero.jpg with your final hero image */}
+    <section className="relative min-h-[84vh] overflow-hidden">
       <Image
-        src="/images/alvin-wayne-duo-hero.jpg"
-        alt="Vox Sacra Duo in performance"
+        src="/images/alvin-recital-closeup.jpg"
+        alt="Alvin Tan in recital"
         fill
-        className="object-cover"
+        className="object-cover object-[58%_22%]"
         priority
       />
-      <div className="absolute inset-0 bg-soft-gradient" />
-      <div className="section-shell relative flex min-h-[78vh] flex-col justify-center py-20 text-ivory">
-        <h1 className="max-w-3xl text-5xl leading-tight md:text-7xl">{title}</h1>
-        <p className="mt-6 max-w-2xl text-lg text-ivory/90 md:text-xl">{subtitle}</p>
-        <div className="mt-10 flex flex-wrap gap-4">
+      <div className="absolute inset-0 bg-hero-overlay" />
+      <div className="section-shell relative flex min-h-[84vh] flex-col justify-center py-24 text-ivory">
+        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-warmstone/95">Vox Sacra Duo</p>
+        <h1 className="max-w-3xl text-5xl leading-[1.03] md:text-7xl">{title}</h1>
+        <p className="mt-7 max-w-2xl text-lg text-ivory/90 md:text-xl">{subtitle}</p>
+        <div className="mt-11 flex flex-wrap gap-4">
           <Link
             href="/sacred-recital"
-            className="rounded-sm bg-gold px-6 py-3 text-sm uppercase tracking-wider text-warmblack transition hover:bg-stone"
+            className="rounded-full bg-mutedgold px-7 py-3 text-sm uppercase tracking-[0.18em] text-charcoal transition hover:bg-warmstone"
           >
             Sacred Recital
           </Link>
           <Link
             href="/enquiry"
-            className="rounded-sm border border-ivory/70 px-6 py-3 text-sm uppercase tracking-wider text-ivory transition hover:bg-ivory hover:text-warmblack"
+            className="rounded-full border border-ivory/70 px-7 py-3 text-sm uppercase tracking-[0.18em] text-ivory transition hover:bg-ivory hover:text-charcoal"
           >
             Enquire for a Performance
           </Link>
