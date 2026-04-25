@@ -6,13 +6,13 @@ type RepertoireSectionProps = {
 
 export default function RepertoireSection({ title, items, description }: RepertoireSectionProps) {
   return (
-    <section className="rounded-2xl border border-taupe/45 bg-white/85 p-8 shadow-soft md:p-10">
-      <h2 className="text-3xl text-charcoal md:text-4xl">{title}</h2>
-      {description ? <p className="mt-4 max-w-3xl text-charcoal/82 leading-relaxed">{description}</p> : null}
+    <section className="editorial-panel">
+      <h2 className="text-4xl md:text-5xl">{title}</h2>
+      {description ? <p className="mt-4 max-w-3xl text-charcoal/84">{description}</p> : null}
       {items.length > 0 ? (
-        <ul className="mt-6 grid gap-3 text-charcoal/90 md:grid-cols-2">
+        <ul className="mt-8 grid gap-x-10 gap-y-4 border-l border-stone/80 pl-6 md:grid-cols-2">
           {items.map((item) => (
-            <li key={item} className="rounded-lg border border-warmstone/60 bg-ivory/60 px-4 py-3">
+            <li key={item} className="text-charcoal/88">
               {item}
             </li>
           ))}

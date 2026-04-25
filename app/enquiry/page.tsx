@@ -4,15 +4,18 @@ import EnquiryForm from "@/components/EnquiryForm";
 export default function EnquiryPage() {
   return (
     <>
-      <PageHeader title="Enquiry" subtitle="Book Vox Sacra Duo for your event or recital series" />
-      <section className="section-shell py-14">
-        <p className="max-w-3xl text-lg leading-relaxed text-charcoal/90">
-          Vox Sacra Duo is available for sacred recitals, chapel concerts, church services, weddings,
-          memorials, private gatherings, and bespoke classical programmes.
+      <PageHeader
+        title="Enquiry"
+        subtitle="For sacred recitals, private events, weddings, memorials, and curated cultural programmes."
+      />
+      <section className="section-shell pb-24">
+        <p className="max-w-3xl text-lg text-charcoal/84">
+          Share your event details and preferred dates. We will respond with availability and a programme
+          approach suited to your venue and occasion.
         </p>
-      </section>
-      <section className="section-shell pb-20">
-        <EnquiryForm />
+        <div className="mt-10">
+          <EnquiryForm />
+        </div>
       </section>
     </>
   );

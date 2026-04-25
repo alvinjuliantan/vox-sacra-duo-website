@@ -8,30 +8,24 @@ type HeroProps = {
 
 export default function Hero({ title, subtitle }: HeroProps) {
   return (
-    <section className="relative min-h-[84vh] overflow-hidden">
+    <section className="relative min-h-[88vh] overflow-hidden">
       <Image
         src="/images/alvin-recital-closeup.jpg"
         alt="Alvin Tan in recital"
         fill
-        className="object-cover object-[58%_22%]"
+        className="object-cover object-[56%_14%]"
         priority
       />
       <div className="absolute inset-0 bg-hero-overlay" />
-      <div className="section-shell relative flex min-h-[84vh] flex-col justify-center py-24 text-ivory">
-        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-warmstone/95">Vox Sacra Duo</p>
-        <h1 className="max-w-3xl text-5xl leading-[1.03] md:text-7xl">{title}</h1>
-        <p className="mt-7 max-w-2xl text-lg text-ivory/90 md:text-xl">{subtitle}</p>
-        <div className="mt-11 flex flex-wrap gap-4">
-          <Link
-            href="/sacred-recital"
-            className="rounded-full bg-mutedgold px-7 py-3 text-sm uppercase tracking-[0.18em] text-charcoal transition hover:bg-warmstone"
-          >
-            Sacred Recital
+      <div className="section-shell relative flex min-h-[88vh] flex-col justify-end py-16 text-ivory md:py-24">
+        <p className="section-intro !text-parchment/90">Voice and Piano Partnership</p>
+        <h1 className="mt-5 max-w-4xl text-5xl leading-[1.01] text-ivory md:text-7xl">{title}</h1>
+        <p className="mt-6 max-w-2xl text-lg text-parchment md:text-xl">{subtitle}</p>
+        <div className="mt-11 flex flex-wrap gap-7">
+          <Link href="/sacred-recital" className="link-elegant !text-parchment hover:!text-ivory">
+            Explore Sacred Recitals
           </Link>
-          <Link
-            href="/enquiry"
-            className="rounded-full border border-ivory/70 px-7 py-3 text-sm uppercase tracking-[0.18em] text-ivory transition hover:bg-ivory hover:text-charcoal"
-          >
+          <Link href="/enquiry" className="link-elegant !text-parchment hover:!text-ivory">
             Enquire for a Performance
           </Link>
         </div>
