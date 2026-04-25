@@ -9,24 +9,32 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
   const isWayne = artist.name.toLowerCase().includes("wayne");
 
   return (
-    <article className="overflow-hidden rounded-md border border-stone/70 bg-white shadow-elegant">
-      <div className="relative h-72 bg-stone/30">
-        {/* Replace artist image files in public/images. */}
+    <article className="grid gap-8 border-b border-taupe/40 pb-14 md:grid-cols-[0.92fr_1.08fr] md:gap-12 md:pb-16">
+      <div className="relative mx-auto w-full max-w-[430px] overflow-hidden rounded-[1.8rem] bg-warmstone/35">
         {isWayne ? (
-          <div className="flex h-full items-center justify-center bg-stone/40 text-center text-charcoal">
+          <div className="flex aspect-[3/4] items-center justify-center text-center text-charcoal">
             <div>
-              <p className="font-serif text-2xl text-burgundy">Portrait forthcoming</p>
-              <p className="mt-2 text-sm">Replace with /images/wayne-piano-portrait.jpg</p>
+              <p className="font-serif text-3xl text-bronze">Portrait forthcoming</p>
+              <p className="mt-2 text-sm text-charcoal/80">Replace with /images/wayne-piano-portrait.jpg</p>
             </div>
           </div>
         ) : (
-          <Image src={artist.image} alt={`${artist.name} portrait`} fill className="object-cover" />
+          <div className="relative aspect-[3/4]">
+            <Image
+              src={artist.image}
+              alt={`${artist.name} portrait`}
+              fill
+              className="object-contain object-top"
+              sizes="(min-width: 768px) 36vw, 90vw"
+            />
+          </div>
         )}
       </div>
-      <div className="p-8">
-        <h3 className="text-3xl text-burgundy">{artist.name}</h3>
-        <p className="mt-1 text-sm uppercase tracking-[0.2em] text-gold">{artist.role}</p>
-        <div className="mt-6 space-y-4 text-charcoal/90">
+
+      <div className="md:pt-4">
+        <p className="text-xs uppercase tracking-[0.24em] text-olive">{artist.role}</p>
+        <h3 className="mt-3 text-4xl leading-tight text-charcoal md:text-5xl">{artist.name}</h3>
+        <div className="mt-7 space-y-5 text-charcoal/87 leading-relaxed">
           {artist.bio.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

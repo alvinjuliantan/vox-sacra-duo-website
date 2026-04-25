@@ -8,25 +8,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#f8f4ec",
-        stone: "#d9cdbc",
-        burgundy: "#5a1e2b",
-        charcoal: "#2d2a28",
-        gold: "#a58f63",
-        warmblack: "#171412"
+        ivory: "#f7f2e9",
+        warmstone: "#e6ddcf",
+        taupe: "#b8ab97",
+        charcoal: "#2f2b28",
+        mutedgold: "#9a875f",
+        olive: "#747058",
+        bronze: "#7c6950",
       },
       fontFamily: {
-        serif: ["Georgia", "Times New Roman", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"]
+        serif: ["Cormorant Garamond", "Georgia", "Times New Roman", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        elegant: "0 10px 35px rgba(23, 20, 18, 0.12)",
+        elegant: "0 18px 45px rgba(47, 43, 40, 0.12)",
+        soft: "0 8px 20px rgba(47, 43, 40, 0.08)",
       },
       backgroundImage: {
-        'soft-gradient': 'linear-gradient(135deg, rgba(90,30,43,0.92), rgba(23,20,18,0.78))'
-      }
+        "hero-overlay":
+          "linear-gradient(150deg, rgba(47,43,40,0.72), rgba(47,43,40,0.44) 40%, rgba(116,112,88,0.38))",
+      },
+      borderRadius: {
+        "2xl": "1.35rem",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

@@ -9,12 +9,13 @@ type CTASectionProps = {
 
 export default function CTASection({ title, text, buttonLabel, buttonLink }: CTASectionProps) {
   return (
-    <section className="rounded-md bg-burgundy px-8 py-12 text-ivory shadow-elegant md:px-12">
-      <h2 className="text-3xl">{title}</h2>
-      <p className="mt-4 max-w-2xl text-ivory/90">{text}</p>
+    <section className="rounded-[1.9rem] border border-taupe/35 bg-[linear-gradient(150deg,rgba(22,20,19,0.95),rgba(48,41,35,0.9))] px-8 py-14 text-ivory shadow-elegant md:px-12 md:py-16">
+      <p className="text-xs uppercase tracking-[0.24em] text-warmstone/80">Vox Sacra Duo</p>
+      <h2 className="mt-4 text-4xl leading-tight md:text-5xl">{title}</h2>
+      <p className="mt-5 max-w-2xl text-ivory/86 leading-relaxed">{text}</p>
       <Link
         href={buttonLink}
-        className="mt-8 inline-block rounded-sm bg-gold px-6 py-3 text-sm uppercase tracking-[0.18em] text-warmblack transition hover:bg-stone"
+        className="mt-9 inline-block rounded-full border border-warmstone/70 bg-warmstone px-7 py-3 text-xs uppercase tracking-[0.2em] text-charcoal transition hover:bg-ivory"
       >
         {buttonLabel}
       </Link>

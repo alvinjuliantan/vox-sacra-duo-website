@@ -8,32 +8,35 @@ type HeroProps = {
 
 export default function Hero({ title, subtitle }: HeroProps) {
   return (
-    <section className="relative min-h-[78vh] overflow-hidden">
-      {/* Replace /images/alvin-wayne-duo-hero.jpg with your final hero image */}
+    <section className="relative min-h-[92vh] overflow-hidden">
       <Image
-        src="/images/alvin-wayne-duo-hero.jpg"
-        alt="Vox Sacra Duo in performance"
+        src="/images/alvin-recital-closeup.jpg"
+        alt="Alvin Tan in recital"
         fill
-        className="object-cover"
         priority
+        className="object-cover object-[56%_20%] md:object-[58%_18%]"
       />
-      <div className="absolute inset-0 bg-soft-gradient" />
-      <div className="section-shell relative flex min-h-[78vh] flex-col justify-center py-20 text-ivory">
-        <h1 className="max-w-3xl text-5xl leading-tight md:text-7xl">{title}</h1>
-        <p className="mt-6 max-w-2xl text-lg text-ivory/90 md:text-xl">{subtitle}</p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link
-            href="/sacred-recital"
-            className="rounded-sm bg-gold px-6 py-3 text-sm uppercase tracking-wider text-warmblack transition hover:bg-stone"
-          >
-            Sacred Recital
-          </Link>
-          <Link
-            href="/enquiry"
-            className="rounded-sm border border-ivory/70 px-6 py-3 text-sm uppercase tracking-wider text-ivory transition hover:bg-ivory hover:text-warmblack"
-          >
-            Enquire for a Performance
-          </Link>
+      <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(19,17,16,0.82)_10%,rgba(19,17,16,0.58)_45%,rgba(19,17,16,0.34)_68%,rgba(19,17,16,0.28)_100%)]" />
+
+      <div className="section-shell relative flex min-h-[92vh] items-end pb-20 pt-28 text-ivory md:items-center md:pb-24">
+        <div className="max-w-3xl border-l border-warmstone/45 pl-6 md:pl-10">
+          <p className="text-xs uppercase tracking-[0.28em] text-warmstone/90">Voice & Piano Partnership</p>
+          <h1 className="mt-5 text-5xl leading-[0.98] md:text-7xl">{title}</h1>
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-ivory/88 md:text-xl">{subtitle}</p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/sacred-recital"
+              className="rounded-full border border-warmstone/70 bg-warmstone/90 px-7 py-3 text-xs uppercase tracking-[0.2em] text-charcoal transition hover:bg-ivory"
+            >
+              Explore Sacred Recital
+            </Link>
+            <Link
+              href="/enquiry"
+              className="rounded-full border border-ivory/55 px-7 py-3 text-xs uppercase tracking-[0.2em] text-ivory transition hover:bg-ivory hover:text-charcoal"
+            >
+              Enquire
+            </Link>
+          </div>
         </div>
       </div>
     </section>

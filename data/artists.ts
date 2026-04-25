@@ -9,7 +9,7 @@ export const artists: Artist[] = [
   {
     name: "Alvin Tan",
     role: "Baritone",
-    image: "/images/alvin-recital-closeup.jpg",
+    image: "/images/alvin-portrait-blue.jpg",
     bio: [
       "Alvin Tan is a Singaporean baritone whose artistic journey spans opera, classical song, Chinese cultural expression, and contemporary vocal projects. Trained in the Western classical tradition, he has performed in opera, concert, and recital settings, bringing together vocal discipline, emotional directness, and a deep sensitivity to text.",
       "His performance background includes international vocal competitions, opera productions, and cross-cultural music projects. In recent years, Alvin has also developed a distinctive artistic direction that bridges classical singing with Chinese aesthetics, sacred repertoire, and new vocal expression.",

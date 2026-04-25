@@ -7,9 +7,9 @@ export default function GalleryPage() {
     <>
       <PageHeader
         title="Gallery"
-        subtitle="Performance images in sacred, recital, and collaborative settings"
+        subtitle="A visual journal of recital, sacred, and collaborative performance moments"
       />
-      <section className="section-shell py-16">
+      <section className="section-shell py-16 md:py-20">
         <GalleryGrid images={galleryImages} />
       </section>
     </>
