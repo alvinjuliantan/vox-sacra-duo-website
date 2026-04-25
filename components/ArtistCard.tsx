@@ -8,26 +8,24 @@ type ArtistCardProps = {
 export default function ArtistCard({ artist }: ArtistCardProps) {
   const isAlvin = artist.name.toLowerCase().includes("alvin");
 
+  const imageContainerClass = isAlvin
+    ? "min-h-[560px] sm:min-h-[640px] md:min-h-[760px]"
+    : "min-h-[420px] md:min-h-[560px]";
+
+  const imageClass = isAlvin
+    ? "object-contain object-top p-4 sm:p-6 md:p-8"
+    : "object-cover object-[50%_16%]";
+
   return (
     <article className="editorial-panel">
       <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
-        <div
-          className={`relative border border-stone/60 bg-parchment/35 ${
-            isAlvin
-              ? "min-h-[560px] sm:min-h-[640px] md:min-h-[760px]"
-              : "min-h-[420px] md:min-h-[560px]"
-          }`}
-        >
+        <div className={`relative border border-stone/60 bg-parchment/35 ${imageContainerClass}`}>
           {artist.image ? (
             <Image
               src={artist.image}
               alt={`${artist.name} portrait`}
               fill
-              className={
-                isAlvin
-                  ? "object-contain object-top p-4 sm:p-6 md:p-8"
-                  : "object-cover object-[50%_16%]"
-              }
+              className={imageClass}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 35vw"
             />
           ) : (
