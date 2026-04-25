@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,9 +16,13 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-serif tracking-wide;
+  @apply font-serif tracking-[0.01em];
 }
 
 .section-shell {
   @apply mx-auto max-w-6xl px-6 md:px-10;
+}
+
+.editorial-card {
+  @apply rounded-2xl border border-taupe/40 bg-white/80 shadow-soft backdrop-blur;
 }
