@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import EnquiryForm from "@/components/EnquiryForm";
+import ContactCard from "@/components/ContactCard";
 
 export default function EnquiryPage() {
   return (
@@ -13,6 +14,9 @@ export default function EnquiryPage() {
           Share your event details and preferred dates. We will respond with availability and a programme
           approach suited to your venue and occasion.
         </p>
+        <div className="mt-12">
+          <ContactCard />
+        </div>
         <div className="mt-10">
           <EnquiryForm />
         </div>

@@ -1,5 +1,6 @@
 export const siteContent = {
   brand: "Vox Sacra Duo",
+  email: "Alvin@alvinjuliantan.com",
   tagline:
     "Sacred and classical music for chapels, churches, private gatherings, and intimate recital settings.",
   intro:

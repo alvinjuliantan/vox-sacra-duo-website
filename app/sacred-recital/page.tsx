@@ -4,10 +4,10 @@ import CTASection from "@/components/CTASection";
 import { sacredRepertoire } from "@/data/repertoire";
 
 const formats = [
-  "30-minute sacred reflection",
-  "45-minute chapel recital",
-  "60-minute curated sacred programme",
-  "Custom programme for weddings, memorials, and parish events",
+  "Sacred reflection of thirty minutes",
+  "Chapel recital of forty five minutes",
+  "Curated sacred programme of one hour",
+  "Custom programmes for weddings, memorials, and parish events",
 ];
 
 export default function SacredRecitalPage() {
@@ -43,12 +43,12 @@ export default function SacredRecitalPage() {
           </div>
         </div>
 
-        <div className="relative min-h-[560px] overflow-hidden border border-stone/60 shadow-elegant md:min-h-[700px]">
+        <div className="relative min-h-[560px] overflow-hidden border border-stone/60 shadow-elegant md:min-h-[720px]">
           <Image
-            src="/images/alvin-sacred-chapel.jpg"
+            src="/images/alvin-chapel-prayer.jpg"
             alt="Sacred chapel performance"
             fill
-            className="object-cover object-[54%_22%]"
+            className="object-cover object-[50%_25%]"
             priority
           />
         </div>

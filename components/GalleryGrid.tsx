@@ -11,22 +11,23 @@ type GalleryGridProps = {
 
 const tallImages = new Set([
   "/images/alvin-portrait-blue.jpg",
-  "/images/alvin-competition-stage.jpg",
+  "/images/alvin-opera-production.jpg",
 ]);
 
 const wideImages = new Set([
-  "/images/alvin-recital-closeup.jpg",
-  "/images/alvin-sacred-chapel.jpg",
+  "/images/vox-sacra-duo-stage.jpg",
+  "/images/alvin-chapel-prayer.jpg",
 ]);
 
 const imagePositions: Record<string, string> = {
-  "/images/alvin-wayne-duo-hero.jpg": "object-[50%_30%]",
-  "/images/alvin-recital-closeup.jpg": "object-[56%_20%]",
-  "/images/alvin-sacred-chapel.jpg": "object-[52%_22%]",
-  "/images/alvin-ensemble-performance.jpg": "object-[50%_24%]",
-  "/images/alvin-competition-stage.jpg": "object-[50%_20%]",
-  "/images/alvin-orchestra-performance.jpg": "object-[50%_20%]",
-  "/images/alvin-portrait-blue.jpg": "object-[50%_10%]",
+  "/images/vox-sacra-duo-stage.jpg":     "object-[50%_22%]",
+  "/images/alvin-portrait-blue.jpg":     "object-[50%_10%]",
+  "/images/wayne-piano-closeup.jpg":     "object-[50%_18%]",
+  "/images/wayne-piano-smiling.jpg":     "object-[50%_18%]",
+  "/images/alvin-chapel-prayer.jpg":     "object-[50%_0%]",
+  "/images/alvin-recital-strings.jpg":   "object-[50%_38%]",
+  "/images/alvin-opera-production.jpg":  "object-[50%_25%]",
+  "/images/alvin-recital-closeup.jpg":   "object-[56%_22%]",
 };
 
 export default function GalleryGrid({ images }: GalleryGridProps) {

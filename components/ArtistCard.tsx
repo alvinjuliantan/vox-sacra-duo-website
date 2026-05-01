@@ -8,24 +8,19 @@ type ArtistCardProps = {
 export default function ArtistCard({ artist }: ArtistCardProps) {
   const isAlvin = artist.name.toLowerCase().includes("alvin");
 
-  const imageContainerClass = isAlvin
-    ? "min-h-[560px] sm:min-h-[640px] md:min-h-[760px]"
-    : "min-h-[420px] md:min-h-[560px]";
-
-  const imageClass = isAlvin
-    ? "object-contain object-top p-4 sm:p-6 md:p-8"
-    : "object-cover object-[50%_16%]";
+  // Both portraits now match a 3:4 frame so the pair reads as balanced.
+  const objectPosition = isAlvin ? "object-[50%_10%]" : "object-[50%_12%]";
 
   return (
     <article className="editorial-panel">
       <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
-        <div className={`relative border border-stone/60 bg-parchment/35 ${imageContainerClass}`}>
+        <div className="relative aspect-[3/4] border border-stone/60 bg-parchment/35">
           {artist.image ? (
             <Image
               src={artist.image}
               alt={`${artist.name} portrait`}
               fill
-              className={imageClass}
+              className={`object-cover ${objectPosition}`}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 35vw"
             />
           ) : (
