@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,14 +10,19 @@
 
 body {
   @apply bg-ivory text-charcoal font-sans antialiased;
-  background-image: radial-gradient(circle at top right, rgba(168, 143, 99, 0.1), transparent 50%);
+  background-image:
+    radial-gradient(circle at 88% -10%, rgba(168, 143, 99, 0.18), transparent 55%),
+    radial-gradient(circle at -5% 110%, rgba(168, 143, 99, 0.10), transparent 55%);
+  background-attachment: fixed;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @apply font-serif tracking-[0.01em] text-warmblack;
+  @apply font-serif tracking-[0.005em] text-warmblack;
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 p {
@@ -42,4 +47,10 @@ p {
 
 .link-elegant {
   @apply text-xs uppercase tracking-[0.2em] text-bronze transition hover:text-warmblack;
+}
+
+/* Audio element softening */
+audio {
+  @apply w-full;
+  border-radius: 0;
 }
