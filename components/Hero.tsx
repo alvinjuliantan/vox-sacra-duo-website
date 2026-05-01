@@ -10,10 +10,10 @@ export default function Hero({ title, subtitle }: HeroProps) {
   return (
     <section className="relative min-h-[88vh] overflow-hidden">
       <Image
-        src="/images/alvin-recital-closeup.jpg"
-        alt="Alvin Tan in recital"
+        src="/images/alvin-wayne-duo-hero.jpg"
+        alt="Live recital performance with voice and piano"
         fill
-        className="object-cover object-[56%_14%]"
+        className="object-cover object-center"
         priority
       />
       <div className="absolute inset-0 bg-hero-overlay" />

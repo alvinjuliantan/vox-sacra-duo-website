@@ -2,6 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import { artists } from "@/data/artists";
+import { recordings } from "@/data/recordings";
 
 const settings = [
   "Chapels and churches",
@@ -54,6 +55,33 @@ export default function HomePage() {
           <Link href="/artists" className="link-elegant mt-9 inline-block">
             Read Artist Biographies
           </Link>
+        </div>
+      </section>
+
+
+
+      <section className="section-shell py-12 md:py-16">
+        <div className="editorial-panel">
+          <p className="section-intro">Music Samples</p>
+          <h2 className="mt-4 text-4xl md:text-5xl">Listen to selected recordings</h2>
+          {recordings.length > 0 ? (
+            <div className="mt-8 grid gap-6">
+              {recordings.map((recording) => (
+                <article key={recording.title} className="space-y-3 border-b border-stone/70 pb-6">
+                  <h3 className="text-2xl">{recording.title}</h3>
+                  {recording.description ? <p className="text-charcoal/78">{recording.description}</p> : null}
+                  <audio controls preload="none" className="w-full">
+                    <source src={recording.src} type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-6 max-w-2xl text-charcoal/80">
+              Audio selections will be published shortly.
+            </p>
+          )}
         </div>
       </section>
 
