@@ -36,6 +36,13 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
         <div>
           <h3 className="text-4xl md:text-5xl">{artist.name}</h3>
           <p className="mt-3 text-xs uppercase tracking-[0.22em] text-bronze">{artist.role}</p>
+          {artist.website ? (
+            <p className="mt-4 text-sm">
+              <a href={artist.website} className="link-elegant">
+                {artist.website.replace(/^https?:\/\//, "")}
+              </a>
+            </p>
+          ) : null}
           <div className="mt-8 space-y-6 text-base text-charcoal/87 md:text-lg">
             {artist.bio.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
